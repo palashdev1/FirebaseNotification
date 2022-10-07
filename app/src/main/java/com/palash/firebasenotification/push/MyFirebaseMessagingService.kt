@@ -17,6 +17,7 @@ import com.palash.firebasenotification.MainActivity
 import com.palash.firebasenotification.R
 import android.net.Uri;
 import androidx.core.app.NotificationCompat.VISIBILITY_PUBLIC
+import com.palash.firebasenotification.NotificationDetailsActivity
 
 
 class MyFirebaseMessagingService : FirebaseMessagingService() {
@@ -50,7 +51,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
     }
 
     private fun sendNotification(title: String?,messageBody: String?) {
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, NotificationDetailsActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         val pendingIntent = PendingIntent.getActivity(
             this, 0 /* Request code */, intent,
